@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Headphones, Plane, Mountain, Zap, Heart, Coffee, User } from "lucide-react"
+import { Headphones, Plane, Mountain, Briefcase, Heart, Coffee, User,FolderOpen } from "lucide-react"
 
 export function AboutSection() {
   const interests = [
@@ -10,8 +10,8 @@ export function AboutSection() {
   ]
 
   const stats = [
-    { label: "Years Experience", value: "3.9+", icon: Zap },
-    { label: "Project Completed", value: "20+", icon: Heart },
+    { label: "Years Experience", value: "1.8+", icon: Briefcase },
+    { label: "Project Completed", value: "5+", icon: FolderOpen },
   ]
 
   return (
@@ -42,7 +42,7 @@ export function AboutSection() {
               <div className="relative">
                 <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-green-500 shadow-xl transform group-hover:scale-110 transition-transform duration-300">
                   <Image
-                    src="/placeholder.svg?height=96&width=96"
+                    src="/images/profile.jpg"
                     alt="Profile Picture"
                     width={96}
                     height={96}

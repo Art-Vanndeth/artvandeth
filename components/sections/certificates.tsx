@@ -21,9 +21,9 @@ export function CertificatesSection() {
       description:
         "Comprehensive full-stack development program covering modern web technologies, microservices architecture, and deployment strategies.",
       certificateUrl: "#",
-      previewImage: "/placeholder.svg?height=200&width=300",
+      previewImage: "/images/full-stack-web-development.jpg",
       color: "from-blue-500 to-blue-700",
-      platformIcon: "🎓",
+      platformIcon: "/images/istad.jpg",
     },
     {
       platform: "CSTAD",
@@ -37,7 +37,7 @@ export function CertificatesSection() {
       certificateUrl: "#",
       previewImage: "/placeholder.svg?height=200&width=300",
       color: "from-orange-500 to-orange-700",
-      platformIcon: "🚀",
+      platformIcon: "/images/istad.jpg",
     },
     {
       platform: "Coursera",
@@ -51,7 +51,7 @@ export function CertificatesSection() {
       certificateUrl: "#",
       previewImage: "/placeholder.svg?height=200&width=300",
       color: "from-blue-400 to-blue-600",
-      platformIcon: "🎯",
+      platformIcon: "/images/istad.jpg",
     },
     {
       platform: "FreeCodeCamp",
@@ -64,7 +64,7 @@ export function CertificatesSection() {
       certificateUrl: "#",
       previewImage: "/placeholder.svg?height=200&width=300",
       color: "from-green-500 to-green-700",
-      platformIcon: "📚",
+      platformIcon: "/images/istad.jpg",
     },
     {
       platform: "LinkedIn",
@@ -77,7 +77,7 @@ export function CertificatesSection() {
       certificateUrl: "#",
       previewImage: "/placeholder.svg?height=200&width=300",
       color: "from-blue-600 to-blue-800",
-      platformIcon: "💼",
+      platformIcon: "/images/istad.jpg",
     },
     {
       platform: "Educative",
@@ -91,7 +91,7 @@ export function CertificatesSection() {
       certificateUrl: "#",
       previewImage: "/placeholder.svg?height=200&width=300",
       color: "from-orange-400 to-orange-600",
-      platformIcon: "📖",
+      platformIcon: "/images/istad.jpg",
     },
   ]
 
@@ -127,8 +127,14 @@ export function CertificatesSection() {
                     className={`bg-gradient-to-r ${cert.color} text-white px-6 py-3 rounded-2xl flex items-center gap-4 shadow-lg`}
                   >
                     {/* Large Circular Icon Background */}
-                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/30 shadow-lg">
-                      <span className="text-2xl">{cert.platformIcon}</span>
+                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/30 shadow-lg overflow-hidden">
+                      <Image
+                        src={cert.platformIcon}
+                        alt="Profile"
+                        width={48}
+                        height={48}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <span className="font-bold text-lg">{cert.platform}</span>
                   </div>
@@ -205,8 +211,14 @@ export function CertificatesSection() {
                       <div
                         className={`bg-gradient-to-r ${selectedCertificate.color} text-white px-6 py-4 rounded-2xl flex items-center gap-4 shadow-xl backdrop-blur-sm border border-white/20`}
                       >
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-2xl font-bold border-2 border-white/30">
-                          {selectedCertificate.platformIcon}
+                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-2xl font-bold border-2 border-white/30 overflow-hidden">
+                          <Image
+                            src={selectedCertificate.platformIcon}
+                            alt="Profile"
+                            width={48}
+                            height={48}
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                         <span className="font-bold text-xl">{selectedCertificate.platform}</span>
                       </div>

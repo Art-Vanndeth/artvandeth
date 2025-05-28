@@ -1,6 +1,7 @@
 import { GraduationCap, Briefcase, MapPin, Calendar, Award, Code } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image"
 
 export function ExperienceSection() {
   const education = [
@@ -11,7 +12,7 @@ export function ExperienceSection() {
       location: "Phnom Penh, Cambodia",
       period: "Aug 2024 - Feb 2025",
       type: "Advanced Training",
-      icon: "🎓",
+      icon: "/images/istad.jpg",
     },
     {
       degree: "Full Stack Web Development",
@@ -20,7 +21,7 @@ export function ExperienceSection() {
       location: "Phnom Penh, Cambodia",
       period: "Jan 2024 - Aug 2024",
       type: "Professional Training",
-      icon: "💻",
+      icon: "/images/istad.jpg",
     },
     {
       degree: "Bachelor of Computer Science",
@@ -29,7 +30,25 @@ export function ExperienceSection() {
       location: "Phnom Penh, Cambodia",
       period: "Dec 2019 - May 2024",
       type: "Bachelor's Degree",
-      icon: "🎓",
+      icon: "/images/rupp.jpg",
+    },
+    {
+      degree: "Flutter Development",
+      field: "Mobile App Development",
+      institution: "Instinct Institute",
+      location: "Phnom Penh, Cambodia",
+      period: "Aug 2021 - Dec 2021",
+      type: "Professional Training",
+      icon: "/images/instinct.jpg",
+    },
+    {
+      degree: "Advanced Java Programming",
+      field: "Java Development Program",
+      institution: "Etec Center",
+      location: "Phnom Penh, Cambodia",
+      period: "Aug 2021 - Dec 2021",
+      type: "Professional Training",
+      icon: "/images/etec.png",
     },
     {
       degree: "BacII National Certificate",
@@ -38,25 +57,26 @@ export function ExperienceSection() {
       location: "Kandal, Cambodia",
       period: "Jan 2018 - Aug 2019",
       type: "High School",
-      icon: "📚",
+      icon: "/images/preksleng.jpg",
     },
   ]
 
   const experience = [
     {
-      company: "CSTAD IT Expert Scholarship and Outsourcing Services",
+      company: "CSTAD IT Expert Scholarship",
       location: "Phnom Penh, Cambodia",
       position: "Full Stack Developer",
       period: "JAN 2024 - FEB 2025",
-      logo: "🚀",
+      logo: "/images/istad.jpg",
       achievements: [
+        "Implemented microservices architecture with decomposition patterns and API communication",
+        "Worked with Apache Kafka, WebSocket, and various deployment patterns",
+        "Utilized Spring Advanced features including Spring Data JPA, OAuth2, and Spring WebFlux",
         "Developed full-stack web applications using Spring Boot, ReactJS, and NextJS",
         "Designed and implemented secure, scalable RESTful APIs with proper authentication",
         "Integrated and managed both relational (PostgreSQL) and NoSQL (MongoDB) databases",
         "Built responsive and user-friendly frontend interfaces with modern frameworks",
-        "Implemented microservices architecture with decomposition patterns and API communication",
-        "Worked with Apache Kafka, WebSocket, and various deployment patterns",
-        "Utilized Spring Advanced features including Spring Data JPA, OAuth2, and Spring WebFlux",
+        "Collaborated in an Agile environment, participating in code reviews and pair programming",
         "Deployed applications using Docker Compose and CI/CD tools with NGINX configuration",
       ],
     },
@@ -65,7 +85,7 @@ export function ExperienceSection() {
       location: "Phnom Penh, Cambodia",
       position: "Customer Service Officer",
       period: "DEC 2021 - FEB 2023",
-      logo: "🏢",
+      logo: "/images/olympia.jpg",
       achievements: [
         "Provided excellent customer service and support to clients and visitors",
         "Managed customer inquiries and resolved issues efficiently",
@@ -80,26 +100,30 @@ export function ExperienceSection() {
     {
       name: "Code Advisors",
       description: "Advanced coding mentorship and project development",
-      period: "Oct 2019 - Nov 2023",
+      period: "Nov 2024 - Feb 2025",
       location: "Phnom Penh, Cambodia",
+      icon: "/images/code-advisors-logo.jpg",
     },
     {
       name: "DealKh E-commerce Platform",
       description: "Full-stack e-commerce development project",
-      period: "Oct 2019 - Nov 2023",
+      period: "May 2024 - Aug 2024",
       location: "Phnom Penh, Cambodia",
+      icon: "/images/dealkh-logo.png",
     },
     {
       name: "Sala Learning Platform",
       description: "Educational platform development and management",
-      period: "Oct 2019 - Nov 2023",
+      period: "Oct 2023 - Dec 2023",
       location: "Phnom Penh, Cambodia",
+      icon: "/images/sala-logo.png",
     },
     {
       name: "Library Management System",
       description: "Complete library management solution development",
-      period: "Oct 2019 - Nov 2023",
+      period: "Oct 2023 - Dec 2023",
       location: "Phnom Penh, Cambodia",
+      icon: "/images/library-logo.jpg",
     },
   ]
 
@@ -126,8 +150,14 @@ export function ExperienceSection() {
                 <CardContent className="p-8">
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
                     <div className="flex items-center gap-4 mb-4 lg:mb-0">
-                      <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-xl">
-                        {item.logo}
+                      <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-xl overflow-hidden">
+                        <Image
+                          src={item.logo}
+                          alt="Profile"
+                          width={48}
+                          height={48}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       <div>
                         <h3 className="text-xl font-bold text-foreground">{item.company}</h3>
@@ -195,7 +225,15 @@ export function ExperienceSection() {
 
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <span className="text-2xl">{item.icon}</span>
+                      <div className="w-8 h-8 rounded-full overflow-hidden">
+                        <Image
+                          src={item.icon}
+                          alt="Profile"
+                          width={32}
+                          height={32}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                       <div>
                         <p className="text-sm text-muted-foreground font-medium">{item.degree}</p>
                         <h3 className="text-xl font-bold text-foreground">{item.field}</h3>
@@ -239,8 +277,14 @@ export function ExperienceSection() {
               >
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
-                      <Code className="w-5 h-5 text-green-500" />
+                    <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center overflow-hidden">
+                      <Image
+                        src={project.icon}
+                        alt={project.name}
+                        width={40}
+                        height={40}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <h3 className="text-xl font-bold text-foreground">{project.name}</h3>
                   </div>
