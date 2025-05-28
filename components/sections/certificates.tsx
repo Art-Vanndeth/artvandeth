@@ -98,11 +98,11 @@ export function CertificatesSection() {
   return (
     <section
       id="certificates"
-      className="py-24 bg-gray-50 dark:bg-slate-900 relative overflow-hidden transition-colors duration-500"
+      className="py-16 bg-gray-50 dark:bg-slate-900 relative overflow-hidden transition-colors duration-500"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-8">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-3 mb-6">
             <Award className="w-8 h-8 text-green-500 animate-bounce" />
             <h2 className="text-5xl md:text-6xl font-bold text-green-500">Certificates</h2>
             <Star className="w-8 h-8 text-green-500 animate-pulse" />

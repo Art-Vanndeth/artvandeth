@@ -140,9 +140,9 @@ export function HeroSection() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center space-y-12 max-w-5xl mx-auto">
+        <div className="text-center space-y-8 max-w-5xl mx-auto">
           {/* Main Content */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 dark:text-white leading-tight">
               ART VANDETH
               <br />
@@ -171,7 +171,7 @@ export function HeroSection() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6">
               <Button
                 variant="outline"
                 size="lg"
@@ -192,7 +192,7 @@ export function HeroSection() {
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-6 justify-center pt-12">
+            <div className="flex gap-6 justify-center pt-8">
               {socialLinks.map(({ icon: IconComponent, href, label }) => (
                 <a
                   key={label}

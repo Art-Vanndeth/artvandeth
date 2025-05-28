@@ -56,33 +56,33 @@ export function ContactSection() {
   ]
 
   return (
-    <section id="contact" className="py-24 bg-background">
+    <section id="contact" className="py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-8">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-3 mb-6">
             <Mail className="w-8 h-8 text-green-500 animate-bounce" />
             <h2 className="text-5xl md:text-6xl font-bold text-green-500">Get In</h2>
             <Phone className="w-8 h-8 text-green-500 animate-pulse" />
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-green-500 mb-8">Touch</h2>
+          <h2 className="text-5xl md:text-6xl font-bold text-green-500 mb-6">Touch</h2>
           <div className="w-16 h-1 bg-green-500 mx-auto mb-8"></div>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Have a project in mind? Let's discuss how we can work together to bring your ideas to life
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-semibold mb-6 text-foreground">Let's start a conversation</h3>
-              <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
+              <h3 className="text-2xl font-semibold mb-4 text-foreground">Let's start a conversation</h3>
+              <p className="text-muted-foreground leading-relaxed mb-6 text-lg">
                 I'm always interested in hearing about new opportunities and exciting projects. Whether you have a
                 question or just want to say hi, I'll try my best to get back to you!
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-4">
               {contactInfo.map(({ icon: IconComponent, label, value, href }) => (
                 <div key={label} className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-green-100 dark:bg-green-900/50 flex items-center justify-center flex-shrink-0">
@@ -118,7 +118,7 @@ export function ContactSection() {
               <CardTitle className="text-2xl text-foreground">Send me a message</CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <Input

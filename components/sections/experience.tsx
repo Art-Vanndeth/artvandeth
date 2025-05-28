@@ -104,20 +104,20 @@ export function ExperienceSection() {
   ]
 
   return (
-    <section id="experience" className="py-24 bg-background">
+    <section id="experience" className="py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Experience Section */}
-        <div className="mb-20">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 mb-8">
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-3 mb-6">
               <Briefcase className="w-8 h-8 text-green-500 animate-bounce" />
               <h2 className="text-4xl md:text-5xl font-bold text-green-500">Experience</h2>
               <Code className="w-8 h-8 text-green-500 animate-pulse" />
             </div>
           </div>
 
-          <div className="space-y-8 max-w-6xl mx-auto">
+          <div className="space-y-6 max-w-6xl mx-auto">
             {experience.map((item, index) => (
               <Card
                 key={index}
@@ -166,16 +166,16 @@ export function ExperienceSection() {
         </div>
         
         {/* Education Section */}
-        <div className="mb-20">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 mb-8">
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-3 mb-6">
               <GraduationCap className="w-8 h-8 text-green-500 animate-bounce" />
               <h2 className="text-4xl md:text-5xl font-bold text-green-500">Education</h2>
               <Award className="w-8 h-8 text-green-500 animate-pulse" />
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
             {education.map((item, index) => (
               <Card
                 key={index}
@@ -222,16 +222,16 @@ export function ExperienceSection() {
 
         {/* Project Trainings Section */}
         <div>
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 mb-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-3 mb-6">
               <Code className="w-8 h-8 text-green-500 animate-bounce" />
               <h2 className="text-4xl md:text-5xl font-bold text-green-500">Project</h2>
               <Award className="w-8 h-8 text-green-500 animate-pulse" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-green-500 mb-8">Trainings</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-green-500 mb-6">Trainings</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
             {projectTrainings.map((project, index) => (
               <Card
                 key={index}

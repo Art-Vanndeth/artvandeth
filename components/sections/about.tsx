@@ -15,7 +15,7 @@ export function AboutSection() {
   ]
 
   return (
-    <section id="about" className="py-24 bg-muted/30 relative overflow-hidden transition-colors duration-500">
+    <section id="about" className="py-16 bg-muted/30 relative overflow-hidden transition-colors duration-500">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 border border-green-500 rounded-full animate-spin-slow"></div>
@@ -26,8 +26,8 @@ export function AboutSection() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-8">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-3 mb-6">
             <User className="w-8 h-8 text-green-500 animate-bounce-slow" />
             <h2 className="text-5xl md:text-6xl font-bold text-green-500">About</h2>
             <Heart className="w-8 h-8 text-green-500 animate-pulse" />

@@ -9,37 +9,46 @@ export function ProjectsSection() {
   const projects = [
     {
       id: 1,
-      title: "CricTracker",
+      title: "Code Advisors",
       description:
-        "Comprehensive cricket tracking platform with live scores, player statistics, and match analysis. Built with modern React ecosystem and real-time data integration.",
-      image: "/placeholder.svg?height=400&width=600",
+        "A great initiative by ISTAD, extends its learning experience to public students by fostering a community of shared knowledge and growth.",
+      image: "/images/code-advisors.jpg",
       workedOn: ["Website", "Admin Panel"],
       technologies: [
-        "JavaScript",
-        "Bootstrap",
-        "SCSS",
+        "Microservices",
+        "Java",
+        "OAuth2",
+        "BFF",
+        "Kafka",
+        "Websocket",
+        "Monitoring",
+                "Elastic Search",
+        "TypeScript",
+        "Tailwind CSS",
         "ReactJS",
         "NextJS",
-        "AMP",
-        "React Hook Form",
-        "GraphQL",
-        "Apollo GraphQL",
+        "Spring Boot",
+        "MongoDB",
+        "PostgreSQL",
+        "Docker",
+        "Jenkins",
         "Git",
       ],
       gradient: "from-blue-500 via-blue-600 to-blue-700",
-      demoLink: "https://crictracker.com",
-      codeLink: "https://github.com/artvandeth/crictracker",
+      demoLink: "https://code-advisors.vercel.app",
+      codeLink: "https://github.com/Art-Vanndeth/code-advisor-ui.git",
       featured: true,
     },
     {
       id: 2,
       title: "DealKh",
       description:
-        "E-commerce platform connecting buyers and sellers with advanced search functionality, secure payment integration, and real-time messaging system.",
-      image: "/placeholder.svg?height=400&width=600",
-      workedOn: ["Website", "Mobile App"],
+        "An online platform that connect businesses to customers, list all deals and discounts, search nearby, add to cart all in one place.",
+      image: "/images/dealkh.jpg",
+      workedOn: ["Website", "Admin Panel"],
       technologies: [
         "Spring Boot",
+        "NextJS",
         "ReactJS",
         "PostgreSQL",
         "JWT",
@@ -49,49 +58,49 @@ export function ProjectsSection() {
         "NGINX",
       ],
       gradient: "from-purple-500 via-pink-500 to-red-500",
-      demoLink: "https://dealkh.com",
-      codeLink: "https://github.com/artvandeth/dealkh",
+      demoLink: "https://dealkh.vercel.app",
+      codeLink: "https://github.com/Art-Vanndeth/dealkh-ui.git",
       featured: true,
     },
     {
       id: 3,
       title: "Sala Learning Platform",
       description:
-        "Educational platform with course management, interactive learning modules, progress tracking, and collaborative features for students and instructors.",
-      image: "/placeholder.svg?height=400&width=600",
+        "Provided free course materials like content, book and blog which cover on STEM subject.",
+      image: "/images/sala.jpg",
       workedOn: ["Website", "Admin Dashboard"],
       technologies: [
+        "Bootstrap",
+        "JQuery",
+        "HTML",
+        "CSS",
+        "PostgreSQL",
+        "JavaScript",
         "Spring Boot",
-        "NextJS",
-        "MongoDB",
-        "Spring WebFlux",
-        "TypeScript",
-        "OAuth2",
-        "Microservices",
-        "Apache Kafka",
       ],
       gradient: "from-green-500 via-teal-500 to-blue-600",
-      demoLink: "https://sala-learning.com",
-      codeLink: "https://github.com/artvandeth/sala-learning",
+      demoLink: "https://sala-final.vercel.app",
+      codeLink: "https://github.com/sunlyhuor/sala_final.git",
       featured: false,
     },
     {
       id: 4,
       title: "Library Management System",
       description:
-        "Complete library management solution with book cataloging, member management, borrowing system, and automated notifications.",
-      image: "/placeholder.svg?height=400&width=600",
+        "Console-based application for managing a library’s book inventory.",
+      image: "/images/library.png",
       workedOn: ["Desktop App", "Web Portal"],
-      technologies: ["Java", "Spring Framework", "MySQL", "Thymeleaf", "Bootstrap", "JPA", "Spring MVC"],
+      technologies: [
+        "Java", "PostgreSQL", "Gradle"],
       gradient: "from-orange-500 via-red-500 to-pink-600",
-      demoLink: "https://library-system.com",
-      codeLink: "https://github.com/artvandeth/library-management",
+      demoLink: "https://github.com/Art-Vanndeth/librarymanagementsystem.git",
+      codeLink: "https://github.com/Art-Vanndeth/librarymanagementsystem.git",
       featured: false,
     },
   ]
 
   return (
-    <section id="projects" className="py-24 bg-muted/30 relative overflow-hidden transition-colors duration-500">
+    <section id="projects" className="py-16 bg-muted/30 relative overflow-hidden transition-colors duration-500">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-40 h-40 bg-green-200 dark:bg-green-800 rounded-full blur-3xl animate-pulse"></div>
@@ -102,19 +111,19 @@ export function ProjectsSection() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-3 mb-8">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-3 mb-6">
             <Sparkles className="w-8 h-8 text-green-500 animate-spin" />
             <h2 className="text-5xl md:text-6xl font-bold text-green-500">Projects I've</h2>
             <Sparkles className="w-8 h-8 text-green-500 animate-spin" style={{ animationDirection: "reverse" }} />
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-green-500 mb-8">Worked on</h2>
+          <h2 className="text-5xl md:text-6xl font-bold text-green-500 mb-6">Worked on</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A showcase of innovative projects that demonstrate my expertise in full-stack development
           </p>
         </div>
 
-        <div className="space-y-16 max-w-7xl mx-auto">
+        <div className="space-y-12 max-w-7xl mx-auto">
           {projects.map((project, index) => {
             const isEven = index % 2 === 0
             return (
@@ -126,19 +135,16 @@ export function ProjectsSection() {
                   <div className={`grid lg:grid-cols-2 gap-0 ${!isEven ? "lg:grid-flow-col-dense" : ""}`}>
                     {/* Project Image with Hover Effects */}
                     <div
-                      className={`relative h-80 lg:h-[500px] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 group ${!isEven ? "lg:col-start-2" : ""}`}
+                      className={`relative h-64 md:h-72 lg:h-80 xl:h-auto overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 group ${!isEven ? "lg:col-start-2" : ""}`}
                     >
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-24 h-24 border-4 border-gray-300 dark:border-gray-600 rounded-full flex items-center justify-center">
-                          <Image
-                            src="/placeholder.svg?height=48&width=48"
-                            alt="Project placeholder"
-                            width={48}
-                            height={48}
-                            className="opacity-50"
-                          />
-                        </div>
-                      </div>
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} project screenshot`}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                        priority={project.featured}
+                      />
 
                       {/* Hover Overlay with Demo and Code Buttons */}
                       <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-6">
@@ -237,7 +243,7 @@ export function ProjectsSection() {
           })}
         </div>
 
-        <div className="text-center mt-20">
+        <div className="text-center mt-12">
           <Button
             variant="outline"
             size="lg"
