@@ -1,4 +1,4 @@
-import { GraduationCap, Briefcase, MapPin, Calendar, Award, Code } from "lucide-react"
+import { GraduationCap, Briefcase, MapPin, Calendar, Award, Code, Code2, FolderOpen } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
@@ -137,7 +137,7 @@ export function ExperienceSection() {
             <div className="inline-flex items-center gap-3 mb-6">
               <Briefcase className="w-8 h-8 text-green-500 animate-bounce" />
               <h2 className="text-4xl md:text-5xl font-bold text-green-500">Experience</h2>
-              <Code className="w-8 h-8 text-green-500 animate-pulse" />
+              <Code2 className="w-8 h-8 text-green-500 animate-pulse" />
             </div>
           </div>
 
@@ -262,7 +262,7 @@ export function ExperienceSection() {
         <div>
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 mb-6">
-              <Code className="w-8 h-8 text-green-500 animate-bounce" />
+              <FolderOpen className="w-8 h-8 text-green-500 animate-bounce" />
               <h2 className="text-4xl md:text-5xl font-bold text-green-500">Project</h2>
               <Award className="w-8 h-8 text-green-500 animate-pulse" />
             </div>

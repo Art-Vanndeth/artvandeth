@@ -25,7 +25,7 @@ import {
   Plane,
 } from "lucide-react"
 
-const roles = ["Full Stack Developer", "Java Specialist", "UI/UX Designer", "Problem Solver"]
+const roles = ["Spring Boot Developer", "Microservices Architect", "Java Developer", "Full Stack Developer", "Java Specialist", "UI/UX Designer", "Problem Solver"]
 export function HeroSection() {
   const [currentRole, setCurrentRole] = useState(0)
   const [displayText, setDisplayText] = useState("")
