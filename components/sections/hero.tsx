@@ -1,11 +1,12 @@
 "use client"
 
+import {SiX} from "react-icons/si"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import {
-  Github,
-  Linkedin,
-  Twitter,
+  GithubIcon,
+  LinkedinIcon,
+  TwitterIcon,
   ChevronDown,
   Eye,
   Download,
@@ -17,11 +18,7 @@ import {
   Star,
   Coffee,
   Leaf,
-  LucideBadgeDollarSign,
-  LucideMusic4,
-  Music2,
   Music,
-  Music4Icon,
   Plane,
 } from "lucide-react"
 
@@ -56,9 +53,9 @@ export function HeroSection() {
   }, [currentRole, isTyping])
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: GithubIcon, href: "https://github.com/Art-Vanndeth", label: "GitHub" },
+    { icon: LinkedinIcon, href: "https://www.linkedin.com/in/art-vandeth-1a15a3325", label: "LinkedIn" },
+    { icon: SiX, href: "https://x.com/vandeth10726", label: "SpaceX" },
   ]
 
   return (
@@ -110,7 +107,7 @@ export function HeroSection() {
 
         {/* Top Right */}
         <div className="absolute top-32 right-32 animate-bounce-slow">
-          <Music4Icon className="w-10 h-10 dark:text-green-400/35 text-white" />
+          <Music className="w-10 h-10 dark:text-green-400/35 text-white" />
         </div>
 
         {/* Middle Left */}
@@ -197,6 +194,8 @@ export function HeroSection() {
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-14 h-14 rounded-2xl bg-card shadow-lg flex items-center justify-center transition-all duration-300 group transform hover:scale-110 hover:shadow-xl modern-card hover:rotate-12"
                   aria-label={label}
                 >

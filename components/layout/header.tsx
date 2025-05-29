@@ -30,23 +30,26 @@ export function Header() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setActiveSection(item.name)}
-                className={`px-6 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
+                className={`px-6 py-2 text-sm font-medium transition-all duration-300 relative ${
                   activeSection === item.name
-                    ? "bg-green-500 text-white shadow-lg"
-                    : "text-foreground/70 hover:text-foreground hover:bg-muted"
+                    ? "text-green-500"
+                    : "text-foreground/70 hover:text-foreground"
                 }`}
               >
                 {item.name}
+                {activeSection === item.name && (
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/6 h-1 bg-green-500 rounded-full"></div>
+                )}
               </Link>
             ))}
           </div>
 
           {/* Logo - Center */}
-          <div className="flex items-center">
-            <div className="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center shadow-lg transform rotate-12">
+          <Link href="#home" onClick={() => setActiveSection("Home")} className="flex items-center">
+            <div className="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center shadow-lg transform rotate-12 hover:rotate-0 transition-transform duration-300 cursor-pointer">
               <Leaf className="w-6 h-6 text-white" />
             </div>
-          </div>
+          </Link>
 
           {/* Right Navigation */}
           <div className="hidden md:flex items-center space-x-2">
@@ -55,13 +58,16 @@ export function Header() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setActiveSection(item.name)}
-                className={`px-6 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
+                className={`px-6 py-2 text-sm font-medium transition-all duration-300 relative ${
                   activeSection === item.name
-                    ? "bg-green-500 text-white shadow-lg"
-                    : "text-foreground/70 hover:text-foreground hover:bg-muted"
+                    ? "text-green-500"
+                    : "text-foreground/70 hover:text-foreground"
                 }`}
               >
                 {item.name}
+                {activeSection === item.name && (
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4/6 h-1 bg-green-500 rounded-full"></div>
+                )}
               </Link>
             ))}
             <ThemeToggle />
@@ -93,13 +99,16 @@ export function Header() {
                     setActiveSection(item.name)
                     setIsMenuOpen(false)
                   }}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  className={`px-4 py-2 text-sm font-medium transition-all duration-300 relative ${
                     activeSection === item.name
-                      ? "bg-green-500 text-white"
-                      : "text-foreground/70 hover:text-foreground hover:bg-muted"
+                      ? "text-green-500"
+                      : "text-foreground/70 hover:text-foreground"
                   }`}
                 >
                   {item.name}
+                  {activeSection === item.name && (
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-green-500 rounded-full"></div>
+                  )}
                 </Link>
               ))}
             </div>
