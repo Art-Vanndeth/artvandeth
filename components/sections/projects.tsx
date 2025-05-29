@@ -243,7 +243,8 @@ export function ProjectsSection() {
           })}
         </div>
 
-        <div className="text-center mt-12">
+        {/* Uncomment if you want to add a button to see more projects on GitHub */}
+        {/* <div className="text-center mt-12">
           <Button
             variant="outline"
             size="lg"
@@ -252,8 +253,9 @@ export function ProjectsSection() {
             <GithubIcon className="w-6 h-6 mr-3" />
             See Github
           </Button>
-        </div>
+        </div> */}
       </div>
+
     </section>
   )
 }

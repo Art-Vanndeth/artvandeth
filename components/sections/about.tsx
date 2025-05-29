@@ -10,8 +10,8 @@ export function AboutSection() {
   ]
 
   const stats = [
-    { label: "Years Experience", value: "1.8+", icon: Briefcase },
-    { label: "Project Completed", value: "5+", icon: FolderOpen },
+    { label: "Years Experience", value: "2+", icon: Briefcase },
+    { label: "Project Completed", value: "18+", icon: FolderOpen },
   ]
 
   return (
@@ -20,7 +20,7 @@ export function AboutSection() {
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 border border-green-500 rounded-full animate-spin-slow"></div>
         <div
-          className="absolute bottom-1/4 right-1/4 w-80 h-80 border border-green-400 rounded-full animate-spin-slow"
+          className="absolute bottom-28 right-96 w-80 h-80 border border-green-400 rounded-full animate-spin-slow"
           style={{ animationDirection: "reverse" }}
         ></div>
       </div>
@@ -53,6 +53,7 @@ export function AboutSection() {
               </div>
               <div>
                 <h3 className="text-4xl font-bold text-green-500 mb-2">I Love</h3>
+                <p className="text-lg text-muted-foreground italic">"Try to know your enemies you will know how to kill them"</p>
               </div>
             </div>
 
@@ -84,7 +85,7 @@ export function AboutSection() {
           {/* Right Side - Stats */}
           <div className="space-y-12">
             {stats.map(({ label, value, icon: IconComponent }) => (
-              <div key={label} className="text-center group">
+              <div key={label} className="text-right group mr-2">
                 <div className="relative inline-block">
                   <div className="text-8xl md:text-9xl font-bold text-green-500 mb-4 transform group-hover:scale-110 transition-transform duration-300">
                     {value}

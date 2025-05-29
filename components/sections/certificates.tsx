@@ -4,7 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { Eye, Award, X, ExternalLink, Calendar, User, Sparkles, Download, Star } from "lucide-react"
 
 export function CertificatesSection() {
@@ -124,7 +124,7 @@ export function CertificatesSection() {
                 {/* Platform Badge with Circular Icon */}
                 <div className="flex items-center justify-between mb-6">
                   <div
-                    className={`bg-gradient-to-r ${cert.color} text-white px-6 py-3 rounded-2xl flex items-center gap-4 shadow-lg`}
+                    className={`bg-gradient-to-r ${cert.color} text-white px-6 py-2 rounded-2xl flex items-center gap-4 shadow-lg`}
                   >
                     {/* Large Circular Icon Background */}
                     <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/30 shadow-lg overflow-hidden">
@@ -146,7 +146,7 @@ export function CertificatesSection() {
                 </div>
 
                 {/* Certificate Title */}
-                <h3 className="text-gray-900 dark:text-white font-bold text-lg mb-4 leading-tight min-h-[3.5rem] line-clamp-3 transition-colors duration-500">
+                <h3 className="text-gray-900 dark:text-white font-bold text-lg mb-4 leading-tight min-h-[1.5rem] line-clamp-3 transition-colors duration-500">
                   {cert.title}
                 </h3>
 
@@ -157,18 +157,18 @@ export function CertificatesSection() {
                 </div>
 
                 {/* Certificate Image with Centered Eye Icon */}
-                <div className="relative h-32 bg-gray-100 dark:bg-slate-700 rounded-xl overflow-hidden group/image transition-colors duration-500">
+                <div className="relative h-56 bg-gray-100 dark:bg-slate-700 rounded-xl overflow-hidden group/image transition-colors duration-500">
                   <Image
                     src={cert.previewImage || "/placeholder.svg"}
                     alt={`${cert.title} Certificate`}
-                    width={300}
-                    height={200}
+                    width={400}
+                    height={350}
                     className="w-full h-full object-cover opacity-80"
                   />
 
                   {/* Centered Eye Icon - Only visible on hover */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                    <div className="w-14 h-14 bg-green-500/90 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-green-400 transform scale-75 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                    <div className="w-14 h-14 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-green-400 transform scale-75 group-hover:scale-100 transition-transform duration-300 shadow-xl">
                       <Eye className="w-6 h-6 text-white" />
                     </div>
                   </div>
@@ -181,25 +181,28 @@ export function CertificatesSection() {
         {/* Enhanced Certificate Preview Dialog */}
         <Dialog open={!!selectedCertificate} onOpenChange={() => setSelectedCertificate(null)}>
           <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden bg-white dark:bg-slate-900 p-0 border-0 shadow-2xl rounded-3xl transition-colors duration-500">
+            <DialogTitle className="sr-only">
+              {selectedCertificate?.title} Certificate Preview
+            </DialogTitle>
             {selectedCertificate && (
               <div className="relative flex flex-col h-full">
                 {/* Close Button */}
-                <Button
+                {/* <Button
                   variant="ghost"
                   size="sm"
                   onClick={() => setSelectedCertificate(null)}
                   className="absolute top-4 right-4 z-30 rounded-full w-12 h-12 p-0 bg-black/20 hover:bg-black/40 text-white backdrop-blur-sm border border-white/20 transition-all duration-200"
                 >
                   <X className="w-6 h-6" />
-                </Button>
+                </Button> */}
 
                 {/* Certificate Preview Image with Enhanced Design */}
-                <div className="relative h-80 rounded-t-3xl overflow-hidden flex-shrink-0">
+                <div className="relative h-[52rem] rounded-t-3xl overflow-hidden flex-shrink-0">
                   <Image
-                    src={selectedCertificate.previewImage || "/placeholder.svg?height=400&width=800"}
+                    src={selectedCertificate.previewImage || "/placeholder.svg?height=600&width=1200"}
                     alt={`${selectedCertificate.title} Certificate`}
-                    width={800}
-                    height={400}
+                    width={1200}
+                    height={600}
                     className="w-full h-full object-cover"
                     priority
                   />
@@ -208,8 +211,8 @@ export function CertificatesSection() {
                   {/* Platform Badge */}
                   <div className="absolute top-6 left-6">
                     <div className="flex items-center gap-3">
-                      <div
-                        className={`bg-gradient-to-r ${selectedCertificate.color} text-white px-6 py-4 rounded-2xl flex items-center gap-4 shadow-xl backdrop-blur-sm border border-white/20`}
+                      {/* <div
+                        className={`bg-gradient-to-r ${selectedCertificate.color} text-white px-6 py-2 rounded-2xl flex items-center gap-4 shadow-xl backdrop-blur-sm border border-white/20`}
                       >
                         <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-2xl font-bold border-2 border-white/30 overflow-hidden">
                           <Image
@@ -221,7 +224,7 @@ export function CertificatesSection() {
                           />
                         </div>
                         <span className="font-bold text-xl">{selectedCertificate.platform}</span>
-                      </div>
+                      </div> */}
                       <div className="bg-yellow-500 text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg">
                         <Star className="w-4 h-4" />
                         <span className="font-medium text-sm">Certified</span>
@@ -230,22 +233,22 @@ export function CertificatesSection() {
                   </div>
 
                   {/* Achievement Badge */}
-                  <div className="absolute bottom-6 right-6">
-                    <div className="bg-green-500 text-white px-6 py-3 rounded-2xl flex items-center gap-3 shadow-xl backdrop-blur-sm">
+                  {/* <div className="absolute bottom-6 right-6">
+                    <div className="bg-green-500 text-white px-3 py-2 rounded-2xl flex items-center gap-3 shadow-xl backdrop-blur-sm">
                       <Award className="w-6 h-6" />
                       <span className="font-semibold">Achievement Unlocked</span>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Scrollable Content */}
                 <div className="flex-1 overflow-y-auto bg-white dark:bg-slate-900 transition-colors duration-500">
-                  <div className="p-6 space-y-6">
+                  <div className="p-4 space-y-6">
                     {/* Title Section */}
                     <div className="text-center space-y-3">
-                      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white transition-colors duration-500">
+                      {/* <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white transition-colors duration-500">
                         {selectedCertificate.title}
-                      </h2>
+                      </h2> */}
                       <div className="flex items-center justify-center gap-2 text-green-500">
                         <Award className="w-5 h-5" />
                         <span className="font-medium">Professional Certificate</span>
@@ -253,7 +256,7 @@ export function CertificatesSection() {
                     </div>
 
                     {/* Certificate Details Grid */}
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {/* <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                       <div className="flex items-center gap-3 p-4 bg-blue-50 dark:bg-blue-900/30 rounded-xl border border-blue-200 dark:border-blue-700/50 transition-colors duration-500">
                         <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
                           <User className="w-5 h-5 text-white" />
@@ -295,10 +298,10 @@ export function CertificatesSection() {
                           </p>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
 
                     {/* Skills and Description */}
-                    <div className="grid md:grid-cols-2 gap-6">
+                    {/* <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-3">
                         <h4 className="font-semibold text-gray-900 dark:text-white flex items-center gap-2 transition-colors duration-500">
                           <Sparkles className="w-4 h-4 text-green-500" />
@@ -324,10 +327,10 @@ export function CertificatesSection() {
                           {selectedCertificate.description}
                         </p>
                       </div>
-                    </div>
+                    </div> */}
 
                     {/* Action Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-3 justify-center pt-6 border-t border-gray-200 dark:border-gray-700 transition-colors duration-500">
+                    {/* <div className="flex flex-col sm:flex-row gap-3 justify-center pt-6 border-t border-gray-200 dark:border-gray-700 transition-colors duration-500">
                       <Button
                         variant="outline"
                         className="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 bg-transparent"
@@ -345,7 +348,7 @@ export function CertificatesSection() {
                         <Download className="w-4 h-4 mr-2" />
                         Download PDF
                       </Button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

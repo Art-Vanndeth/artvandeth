@@ -61,7 +61,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background transition-colors duration-500"
+      className="min-h-[55vh] flex items-center justify-center relative overflow-hidden bg-background transition-colors duration-500"
     >
       {/* Modern Geometric Background */}
       <div className="absolute inset-0">
@@ -142,10 +142,10 @@ export function HeroSection() {
           <div className="space-y-6">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 dark:text-white leading-tight">
               ART VANDETH
+              {/* <br />
+              <span className="text-green-600">Creative</span>
               <br />
-              <span className="text-green-600">development</span>
-              <br />
-              simple.
+              Professional */}
             </h1>
 
             {/* Code Brackets with animation */}
@@ -173,18 +173,31 @@ export function HeroSection() {
                 variant="outline"
                 size="lg"
                 className="dark:bg-white bg-gray-800 dark:hover:bg-green-600 dark:hover:text-black hover:bg-green-600 text-green-500 font-semibold px-12 py-4 text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg rounded-xl group"
+                asChild
               >
-                <Eye className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                VIEW PROJECTS
+                <a
+                  href="https://github.com/Art-Vanndeth"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Eye className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+                  VIEW PROJECTS
+                </a>
               </Button>
 
               <Button
                 variant="outline"
                 size="lg"
                 className="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white font-semibold px-12 py-4 text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg rounded-xl group"
+                asChild
               >
-                <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                DOWNLOAD CV
+                <a
+                  href="/cv/artvandeth_cv.pdf"
+                  download="artvandeth_cv.pdf"
+                >
+                  <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+                  DOWNLOAD CV
+                </a>
               </Button>
             </div>
 

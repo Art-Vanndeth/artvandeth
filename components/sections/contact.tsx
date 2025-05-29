@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send, Globe } from "lucide-react"
+import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -45,13 +45,13 @@ export function ContactSection() {
       icon: MapPin,
       label: "Location",
       value: "Tuol Kouk, Phnom Penh",
-      href: "#",
+      href: "https://maps.app.goo.gl/5WcKMFgU5F3N7aT6A",
     },
     {
-      icon: Globe,
-      label: "Portfolio",
-      value: "artvandeth.vercel.app",
-      href: "https://artvandeth.vercel.app",
+      icon: Send,
+      label: "Telegram",
+      value: "@artvandeth",
+      href: "https://t.me/artvandeth",
     },
   ]
 
@@ -127,7 +127,7 @@ export function ContactSection() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="bg-muted/50 border-border focus:border-green-500 dark:focus:border-green-400"
+                      className="bg-muted/50 border-border focus:border-green-500 dark:focus:border-green-400 focus:ring-2 focus:ring-green-500/20 transition-all duration-300"
                     />
                   </div>
                   <div>
@@ -138,7 +138,7 @@ export function ContactSection() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="bg-muted/50 border-border focus:border-green-500 dark:focus:border-green-400"
+                      className="bg-muted/50 border-border focus:border-green-500 dark:focus:border-green-400 focus:ring-2 focus:ring-green-500/20 transition-all duration-300"
                     />
                   </div>
                 </div>
@@ -150,7 +150,7 @@ export function ContactSection() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="bg-muted/50 border-border focus:border-green-500 dark:focus:border-green-400"
+                    className="bg-muted/50 border-border focus:border-green-500 dark:focus:border-green-400 focus:ring-2 focus:ring-green-500/20 transition-all duration-300"
                   />
                 </div>
 
@@ -162,7 +162,7 @@ export function ContactSection() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="bg-muted/50 border-border focus:border-green-500 dark:focus:border-green-400 resize-none"
+                    className="bg-muted/50 border-border focus:border-green-500 dark:focus:border-green-400 focus:ring-2 focus:ring-green-500/20 transition-all duration-300 resize-none"
                   />
                 </div>
 
