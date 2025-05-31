@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -7,6 +7,16 @@ import { Header } from "@/components/layout/header"
 import { Toaster } from "@/components/ui/sonner"
 
 const inter = Inter({ subsets: ["latin"] })
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  colorScheme: "dark light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+}
 
 export const metadata: Metadata = {
   title: "Art Vandeth | Java Developer",
@@ -33,11 +43,6 @@ export const metadata: Metadata = {
   applicationName: "Art Vandeth Portfolio",
   generator: "Next.js",
   referrer: "origin-when-cross-origin",
-  colorScheme: "dark light",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-  ],
   icons: {
     icon: [
       { url: "/logo.png", sizes: "32x32", type: "image/png" },
@@ -92,7 +97,7 @@ export const metadata: Metadata = {
     address: false,
     email: false,
   },
-  publisher: "Art Vandeth", 
+  publisher: "Art Vandeth",
   openGraph: {
     title: "Art Vandeth - Java Developer",
     description: "Experienced Java Developer specializing in Spring Boot, microservices, and enterprise applications.",
@@ -101,9 +106,13 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/logo.png",
-        alt: 'Art Vandeth Logo',
+        width: 1200,
+        height: 630,
+        alt: "Art Vandeth Logo",
       },
     ],
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
     site: "@artvandeth",
@@ -112,7 +121,7 @@ export const metadata: Metadata = {
     description: "Experienced Java Developer specializing in Spring Boot, microservices, and enterprise applications.",
     images: {
       url: "/logo.png",
-      alt: 'Art Vandeth Logo',
+      alt: "Art Vandeth Logo",
     },
   },
 }
@@ -124,42 +133,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <meta name="author" content="Art Vandeth" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="robots" content="index, follow" />
-
-        {/* Facebook Meta Tags */}
-        <meta name="title" content="Art Vandeth - Java Developer" />
-        <meta
-          property="og:title"
-          content="Art Vandeth - Java Developer"
-        />
-        <meta
-          property="og:description"
-          content="Experienced Java Developer specializing in Spring Boot, microservices, and enterprise applications."
-        />
-        <meta property="og:image" content="/logo.png" />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:image:alt" content="Art Vandeth Logo" />
-        <meta property="og:url" content="https://artvandeth.vercel.app" />
-        <meta property="og:site_name" content="Art Vandeth Portfolio" />
-
-        {/* Instagram Meta Tags */}
-        <meta
-          property="insta:title"
-          content="Art Vandeth - Java Developer"
-        />
-        <meta
-          property="insta:description"
-          content="Experienced Java Developer specializing in Spring Boot, microservices, and enterprise applications."
-        />
-        <meta property="insta:image" content="/logo.png" />
-        <meta property="insta:site_name" content="Art Vandeth Portfolio" />
-        <meta property="insta:url" content="https://artvandeth.vercel.app" />
-        <title>Art Vandeth - Java Developer</title>
-      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <Header />
