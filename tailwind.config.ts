@@ -20,6 +20,11 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        'xs': '475px',
+        'ipad': '768px',
+        'ipad-pro': '1024px',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -54,8 +59,12 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Include full color palette
-        ...colors,
+        // Include full color palette (excluding deprecated colors)
+        ...Object.fromEntries(
+          Object.entries(colors).filter(([key]) => 
+            !['lightBlue', 'warmGray', 'trueGray', 'coolGray', 'blueGray'].includes(key)
+          )
+        ),
         // Custom colors from the spec
         coral: "hsl(var(--coral))",
         "warm-orange": "hsl(var(--warm-orange))",

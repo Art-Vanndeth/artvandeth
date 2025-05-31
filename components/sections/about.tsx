@@ -15,12 +15,12 @@ export function AboutSection() {
   ]
 
   return (
-    <section id="about" className="py-16 bg-muted/30 relative overflow-hidden transition-colors duration-500">
+    <section id="about" className="py-16 bg-background relative overflow-hidden transition-colors duration-500">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 border border-green-500 rounded-full animate-spin-slow"></div>
         <div
-          className="absolute bottom-28 right-96 w-80 h-80 border border-green-400 rounded-full animate-spin-slow"
+          className="absolute bottom-32 right-72 w-80 h-80 border border-green-400 rounded-full animate-spin-slow"
           style={{ animationDirection: "reverse" }}
         ></div>
       </div>

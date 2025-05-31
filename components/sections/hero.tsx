@@ -20,9 +20,11 @@ import {
   Leaf,
   Music,
   Plane,
+  CloudCog,
+  CloudDrizzle,
 } from "lucide-react"
 
-const roles = ["Spring Boot Developer", "Microservices Architect", "Java Developer", "Full Stack Developer", "Java Specialist", "UI/UX Designer", "Problem Solver"]
+const roles = ["Java Developer", "Microservices Architect", "Spring Boot Developer", "Full Stack Developer", "Java Specialist", "UI/UX Designer", "Problem Solver", "Software Engineer"]
 export function HeroSection() {
   const [currentRole, setCurrentRole] = useState(0)
   const [displayText, setDisplayText] = useState("")
@@ -107,7 +109,7 @@ export function HeroSection() {
 
         {/* Top Right */}
         <div className="absolute top-32 right-32 animate-bounce-slow">
-          <Music className="w-10 h-10 dark:text-green-400/35 text-white" />
+          <CloudDrizzle className="w-10 h-10 dark:text-green-400/35 text-white" />
         </div>
 
         {/* Middle Left */}
@@ -116,22 +118,22 @@ export function HeroSection() {
         </div>
 
         {/* Middle Right */}
-        <div className="absolute top-1/3 right-20 animate-spin-slow" style={{ animationDelay: "1s" }}>
+        <div className="absolute top-2/4 right-20 animate-spin-slow" style={{ animationDelay: "1s" }}>
           <Zap className="w-7 h-7 dark:text-green-400/35 text-white" />
         </div>
 
         {/* Middle Right */}
-        <div className="absolute top-2/4 right-28 animate-bounce-slow" style={{ animationDelay: "1s" }}>
+        <div className="absolute top-2/3 right-28 animate-bounce-slow" style={{ animationDelay: "1s" }}>
           <Sparkles className="w-7 h-7 dark:text-green-400/35 text-white" />
         </div>
 
         {/* Bottom Left */}
-        <div className="absolute bottom-32 left-32 animate-pulse" style={{ animationDelay: "2s" }}>
+        <div className="absolute bottom-12 left-32 animate-pulse" style={{ animationDelay: "2s" }}>
           <Coffee className="w-9 h-9 dark:text-green-400/35 text-white" />
         </div>
 
         {/* Bottom Right */}
-        <div className="absolute bottom-44 right-48 animate-pulse" style={{ animationDelay: "0.5s" }}>
+        <div className="absolute bottom-16 right-48 animate-pulse" style={{ animationDelay: "0.5s" }}>
           <Plane className="w-8 h-8 dark:text-green-400/35 text-white" />
         </div>
       </div>
@@ -140,7 +142,7 @@ export function HeroSection() {
         <div className="text-center space-y-8 max-w-5xl mx-auto">
           {/* Main Content */}
           <div className="space-y-6">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 dark:text-white leading-tight">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-800 dark:text-white leading-tight">
               ART VANDETH
               {/* <br />
               <span className="text-green-600">Creative</span>

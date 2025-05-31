@@ -6,7 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react"
+import { Mail, Phone, MapPin, Send, MessageCircle, Loader2, CheckCircle, AlertCircle } from "lucide-react"
+import { toast } from "sonner"
+import axios from 'axios'
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -15,17 +17,174 @@ export function ContactSection() {
     subject: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [errors, setErrors] = useState<{[key: string]: string}>({})
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Form validation
+  const validateForm = () => {
+    const newErrors: {[key: string]: string} = {}
+    
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required"
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = "Name must be at least 2 characters"
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required"
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address"
+    }
+    
+    if (!formData.subject.trim()) {
+      newErrors.subject = "Subject is required"
+    } else if (formData.subject.trim().length < 5) {
+      newErrors.subject = "Subject must be at least 5 characters"
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required"
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters"
+    }
+    
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
+    
+    // Validate form
+    if (!validateForm()) {
+      toast.error("Please fix the errors in the form", {
+        description: "Check all required fields and try again",
+        icon: <AlertCircle className="w-4 h-4" />,
+      })
+      return
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      // Check if Telegram Bot is properly configured
+      const botToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN
+      const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID
+
+      if (!botToken || !chatId) {
+        throw new Error('Telegram Bot configuration missing. Please check your environment variables.')
+      }
+
+      if (botToken === 'your_bot_token' || chatId === 'your_chat_id') {
+        // Fallback: Show success message but log that Telegram isn't configured
+        console.warn('Telegram Bot not configured yet. Form data:', formData)
+        
+        // Show success toast (temporary until Telegram is set up)
+        toast.success("Message received!", {
+          description: "Telegram Bot not configured yet, but your message was logged. Please contact me directly for now.",
+          icon: <CheckCircle className="w-4 h-4" />,
+          duration: 7000,
+        })
+        
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        })
+        setErrors({})
+        return
+      }
+
+      // Format message for Telegram
+      const telegramMessage = `
+🔥 *New Contact Form Message*
+
+👤 *From:* ${formData.name}
+📧 *Email:* ${formData.email}
+📝 *Subject:* ${formData.subject}
+
+💬 *Message:*
+${formData.message}
+
+---
+📅 *Sent:* ${new Date().toLocaleString()}
+🌐 *From:* artvandeth.vercel.app
+      `.trim()
+
+      // Send to Telegram
+      const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`
+      
+      const response = await axios.post(telegramApiUrl, {
+        chat_id: chatId,
+        text: telegramMessage,
+        parse_mode: 'Markdown'
+      })
+
+      console.log('Message sent to Telegram successfully:', response.data)
+      
+      // Show success toast
+      toast.success("Message sent successfully!", {
+        description: "Thank you for your message. I'll get back to you soon via Telegram!",
+        icon: <CheckCircle className="w-4 h-4" />,
+        duration: 5000,
+      })
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      })
+      setErrors({})
+      
+    } catch (error) {
+      console.error('Failed to send message to Telegram:', error)
+      
+      // Show specific error message based on the error type
+      let errorMessage = "Something went wrong. Please try again or contact me directly."
+      
+      if (axios.isAxiosError(error)) {
+        if (error.response?.status === 401) {
+          errorMessage = "Telegram Bot token is invalid. Please contact me directly."
+        } else if (error.response?.status === 400) {
+          errorMessage = "Invalid chat ID or message format. Please contact me directly."
+        } else if (error.code === 'NETWORK_ERROR') {
+          errorMessage = "Network error. Please check your connection and try again."
+        } else {
+          errorMessage = `Telegram API Error: ${error.response?.data?.description || error.message}`
+        }
+      } else if (error instanceof Error) {
+        errorMessage = error.message
+      }
+      
+      // Show error toast
+      toast.error("Failed to send message", {
+        description: errorMessage,
+        icon: <AlertCircle className="w-4 h-4" />,
+        duration: 5000,
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }))
+    
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }))
+    }
   }
 
   const contactInfo = [
@@ -90,7 +249,12 @@ export function ContactSection() {
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground font-medium">{label}</div>
-                    <a href={href} className="text-foreground font-medium hover:text-green-500 transition-colors">
+                    <a 
+                      href={href} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-foreground font-medium hover:text-green-500 transition-colors"
+                    >
                       {value}
                     </a>
                   </div>
@@ -127,8 +291,17 @@ export function ContactSection() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="bg-muted/50 border-border focus:border-green-500 dark:focus:border-green-400 focus:ring-2 focus:ring-green-500/20 transition-all duration-300"
+                      className={`bg-muted/50 border-border focus:border-green-500 dark:focus:border-green-400 focus:ring-2 focus:ring-green-500/20 transition-all duration-300 ${
+                        errors.name ? "border-red-500 focus:border-red-500 focus:ring-red-500/20" : ""
+                      }`}
+                      disabled={isSubmitting}
                     />
+                    {errors.name && (
+                      <p className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.name}
+                      </p>
+                    )}
                   </div>
                   <div>
                     <Input
@@ -138,8 +311,17 @@ export function ContactSection() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="bg-muted/50 border-border focus:border-green-500 dark:focus:border-green-400 focus:ring-2 focus:ring-green-500/20 transition-all duration-300"
+                      className={`bg-muted/50 border-border focus:border-green-500 dark:focus:border-green-400 focus:ring-2 focus:ring-green-500/20 transition-all duration-300 ${
+                        errors.email ? "border-red-500 focus:border-red-500 focus:ring-red-500/20" : ""
+                      }`}
+                      disabled={isSubmitting}
                     />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.email}
+                      </p>
+                    )}
                   </div>
                 </div>
 
@@ -150,8 +332,17 @@ export function ContactSection() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="bg-muted/50 border-border focus:border-green-500 dark:focus:border-green-400 focus:ring-2 focus:ring-green-500/20 transition-all duration-300"
+                    className={`bg-muted/50 border-border focus:border-green-500 dark:focus:border-green-400 focus:ring-2 focus:ring-green-500/20 transition-all duration-300 ${
+                      errors.subject ? "border-red-500 focus:border-red-500 focus:ring-red-500/20" : ""
+                    }`}
+                    disabled={isSubmitting}
                   />
+                  {errors.subject && (
+                    <p className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                      <AlertCircle className="w-3 h-3" />
+                      {errors.subject}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -162,16 +353,35 @@ export function ContactSection() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="bg-muted/50 border-border focus:border-green-500 dark:focus:border-green-400 focus:ring-2 focus:ring-green-500/20 transition-all duration-300 resize-none"
+                    className={`bg-muted/50 border-border focus:border-green-500 dark:focus:border-green-400 focus:ring-2 focus:ring-green-500/20 transition-all duration-300 resize-none ${
+                      errors.message ? "border-red-500 focus:border-red-500 focus:ring-red-500/20" : ""
+                    }`}
+                    disabled={isSubmitting}
                   />
+                  {errors.message && (
+                    <p className="text-red-500 text-sm mt-1 flex items-center gap-1">
+                      <AlertCircle className="w-3 h-3" />
+                      {errors.message}
+                    </p>
+                  )}
                 </div>
 
                 <Button
                   type="submit"
-                  className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-4 text-lg transition-all duration-300 transform hover:scale-105"
+                  disabled={isSubmitting}
+                  className="w-full bg-green-500 hover:bg-green-600 disabled:bg-green-500/50 text-white font-semibold py-4 text-lg transition-all duration-300 transform hover:scale-105 disabled:transform-none disabled:hover:scale-100"
                 >
-                  <Send className="w-5 h-5 mr-2" />
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                      Sending Message...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5 mr-2" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
             </CardContent>

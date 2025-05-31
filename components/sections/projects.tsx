@@ -100,7 +100,7 @@ export function ProjectsSection() {
   ]
 
   return (
-    <section id="projects" className="py-16 bg-muted/30 relative overflow-hidden transition-colors duration-500">
+    <section id="projects" className="py-16 bg-background relative overflow-hidden transition-colors duration-500">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-40 h-40 bg-green-200 dark:bg-green-800 rounded-full blur-3xl animate-pulse"></div>

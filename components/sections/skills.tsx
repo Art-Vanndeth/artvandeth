@@ -144,7 +144,7 @@ export function SkillsSection() {
                 <Badge
                   key={name}
                   variant="outline"
-                  className="border-color-modern-card px-6 py-4 dark:text-gray-300 text-gray-500 hover:text-green-500 dark:hover:text-green-500 text-base font-medium rounded-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-2"
+                  className="border-color-modern-card px-6 py-4 dark:text-gray-200 text-gray-800 hover:text-green-500 dark:hover:text-green-500 text-base font-medium rounded-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-2"
                   style={{ animationDelay: `${index * 0.05}s` }}
                 >
                   <IconComponent className="mr-2 text-lg" />
@@ -162,7 +162,7 @@ export function SkillsSection() {
                 <Badge
                   key={name}
                   variant="outline"
-                  className="border-color-modern-card px-6 py-4 dark:text-gray-300 text-gray-500 hover:text-green-500 dark:hover:text-green-500 text-base font-medium rounded-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-2"
+                  className="border-color-modern-card px-6 py-4 dark:text-gray-200 text-gray-800 hover:text-green-500 dark:hover:text-green-500 text-base font-medium rounded-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-2"
                   style={{ animationDelay: `${index * 0.05}s` }}
                 >
                   <IconComponent className="mr-2 text-lg" />
@@ -180,7 +180,7 @@ export function SkillsSection() {
                 <Badge
                   key={name}
                   variant="outline"
-                  className="border-color-modern-card px-6 py-4 dark:text-gray-300 text-gray-500 hover:text-green-500 dark:hover:text-green-500 text-base font-medium rounded-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-2"
+                  className="border-color-modern-card px-6 py-4 dark:text-gray-200 text-gray-800 hover:text-green-500 dark:hover:text-green-500 text-base font-medium rounded-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-2"
                   style={{ animationDelay: `${index * 0.05}s` }}
                 >
                   <IconComponent className="mr-2 text-lg" />

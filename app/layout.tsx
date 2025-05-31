@@ -4,29 +4,117 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/layout/header"
+import { Toaster } from "@/components/ui/sonner"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Art Vandeth - Full Stack Developer",
+  title: "Art Vandeth | Java Developer",
   description:
-    "Experienced Full Stack Developer specializing in React, Next.js, and Node.js. Building modern web applications with cutting-edge technologies.",
+    "Experienced Java Developer specializing in Spring Boot, microservices, and enterprise applications. Building scalable backend solutions with modern Java technologies.",
+  keywords: [
+    "Java Developer",
+    "Spring Boot",
+    "Microservices",
+    "Enterprise Applications",
+    "Backend Development",
+    "Software Engineer",
+    "Java Specialist",
+    "API Development",
+    "Agile Development",
+  ],
+  authors: [
+    {
+      name: "Art Vandeth",
+      url: "https://artvandeth.vercel.app",
+    },
+  ],
+  creator: "Art Vandeth",
+  applicationName: "Art Vandeth Portfolio",
+  generator: "Next.js",
+  referrer: "origin-when-cross-origin",
+  colorScheme: "dark light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+  icons: {
+    icon: [
+      { url: "/logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" }
+    ],
+    shortcut: "/logo.png",
+    apple: [
+      { url: "/logo.png", sizes: "180x180", type: "image/png" }
+    ],
+    other: [
+      {
+        rel: "icon",
+        url: "/logo.png",
+        sizes: "32x32",
+      },
+      {
+        rel: "icon",
+        url: "/logo.svg",
+        type: "image/svg+xml",
+      },
+      {
+        rel: "mask-icon",
+        url: "/safari-pinned-tab.svg",
+        color: "#5bbad5",
+      },
+    ],
+  },
+  manifest: "/manifest.json",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      nocache: true,
+    },
+  },
+  metadataBase: new URL("https://artvandeth.vercel.app"),
+  alternates: {
+    canonical: "https://artvandeth.vercel.app",
+    types: {
+      "application/rss+xml": "/feed.xml",
+      "application/atom+xml": "/feed.atom",
+      "application/json": "/feed.json",
+    },
+  },
+  category: "technology",
+  formatDetection: {
+    telephone: false,
+    address: false,
+    email: false,
+  },
+  publisher: "Art Vandeth", 
   openGraph: {
-    title: "Art Vandeth - Full Stack Developer",
-    description: "Experienced Full Stack Developer specializing in React, Next.js, and Node.js.",
-    url: "https://artvandeth.dev",
+    title: "Art Vandeth - Java Developer",
+    description: "Experienced Java Developer specializing in Spring Boot, microservices, and enterprise applications.",
+    url: "https://artvandeth.vercel.app",
     siteName: "Art Vandeth Portfolio",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
-    locale: "en_US",
-    type: "website",
+    images: [
+      {
+        url: "/logo.png",
+        alt: 'Art Vandeth Logo',
+      },
+    ],
   },
   twitter: {
+    site: "@artvandeth",
     card: "summary_large_image",
-    title: "Art Vandeth - Full Stack Developer",
-    description: "Experienced Full Stack Developer specializing in React, Next.js, and Node.js.",
-    images: ["/og-image.png"],
+    title: "Art Vandeth - Java Developer",
+    description: "Experienced Java Developer specializing in Spring Boot, microservices, and enterprise applications.",
+    images: {
+      url: "/logo.png",
+      alt: 'Art Vandeth Logo',
+    },
   },
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -36,10 +124,47 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="author" content="Art Vandeth" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Facebook Meta Tags */}
+        <meta name="title" content="Art Vandeth - Java Developer" />
+        <meta
+          property="og:title"
+          content="Art Vandeth - Java Developer"
+        />
+        <meta
+          property="og:description"
+          content="Experienced Java Developer specializing in Spring Boot, microservices, and enterprise applications."
+        />
+        <meta property="og:image" content="/logo.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image:alt" content="Art Vandeth Logo" />
+        <meta property="og:url" content="https://artvandeth.vercel.app" />
+        <meta property="og:site_name" content="Art Vandeth Portfolio" />
+
+        {/* Instagram Meta Tags */}
+        <meta
+          property="insta:title"
+          content="Art Vandeth - Java Developer"
+        />
+        <meta
+          property="insta:description"
+          content="Experienced Java Developer specializing in Spring Boot, microservices, and enterprise applications."
+        />
+        <meta property="insta:image" content="/logo.png" />
+        <meta property="insta:site_name" content="Art Vandeth Portfolio" />
+        <meta property="insta:url" content="https://artvandeth.vercel.app" />
+        <title>Art Vandeth - Java Developer</title>
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <Header />
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

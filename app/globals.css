@@ -233,3 +233,56 @@ html {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
+
+/* Header navigation underline animations */
+.nav-underline {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.nav-underline-enter {
+  animation: underlineGrow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-underline-leave {
+  animation: underlineShrink 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes underlineGrow {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes underlineShrink {
+  from {
+    opacity: 1;
+  }
+  to {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+/* Mobile navigation enhanced animations */
+.mobile-nav-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav-item:hover {
+  transform: translateX(4px);
+}
+
+/* Header backdrop blur enhancement */
+.header-backdrop {
+  backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.dark .header-backdrop {
+  background: rgba(15, 23, 42, 0.85);
+}

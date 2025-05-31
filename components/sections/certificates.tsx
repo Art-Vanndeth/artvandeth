@@ -13,92 +13,92 @@ export function CertificatesSection() {
   const certificates = [
     {
       platform: "CSTAD",
-      title: "Full Stack Web Development Certificate",
-      instructor: "CSTAD Expert Team",
-      completedDate: "August 2024",
-      duration: "8 months",
-      skills: ["Spring Boot", "ReactJS", "NextJS", "PostgreSQL", "Docker", "Microservices"],
+      title: "Spring Microservices",
+      instructor: "CSTAD Advanced Team",
+      completedDate: "February 2025",
+      duration: "6 months",
+      skills: ["Spring Boot", "Microservices", "Apache Kafka", "WebSocket", "Docker", "API Gateway", "Spring Cloud", "OAuth2", "PostgreSQL", "MongoDB", "Elasticsearch", "Debezium", "BFF Pattern"],
       description:
-        "Comprehensive full-stack development program covering modern web technologies, microservices architecture, and deployment strategies.",
+        "Advanced microservices training covering decomposition patterns, communication styles, and deployment strategies.",
       certificateUrl: "#",
-      previewImage: "/images/full-stack-web-development.jpg",
+      previewImage: "/certificates/spring_microservices.jpg",
       color: "from-blue-500 to-blue-700",
       platformIcon: "/images/istad.jpg",
     },
     {
       platform: "CSTAD",
-      title: "Spring Microservices Architecture",
-      instructor: "CSTAD Advanced Team",
-      completedDate: "February 2025",
-      duration: "6 months",
-      skills: ["Spring Boot", "Microservices", "Apache Kafka", "Docker", "API Gateway", "OAuth2"],
+      title: "Full Stack Web Development",
+      instructor: "CSTAD Expert Team",
+      completedDate: "August 2024",
+      duration: "8 months",
+      skills: ["Spring Boot", "ReactJS", "NextJS", "PostgreSQL", "Docker", "Git", "JWT", "RESTful APIs"],
       description:
-        "Advanced microservices architecture training covering decomposition patterns, communication styles, and deployment strategies.",
+        "Comprehensive full-stack development program covering modern web technologies, microservices architecture, and deployment strategies.",
       certificateUrl: "#",
-      previewImage: "/placeholder.svg?height=200&width=300",
+      previewImage: "/certificates/full_stack.jpg",
       color: "from-orange-500 to-orange-700",
       platformIcon: "/images/istad.jpg",
     },
     {
-      platform: "Coursera",
-      title: "Google UX Design Certificate",
-      instructor: "Google",
+      platform: "RUPP",
+      title: "Computer Science and Engineering",
+      instructor: "RUPP Faculty",
       completedDate: "May 2024",
-      duration: "6 months",
-      skills: ["UX Design", "Figma", "Prototyping", "User Research", "Wireframing"],
+      duration: "4 years",
+      skills: ["Java", "C++", "Data Structures", "Algorithms", "Database Systems", "Software Engineering"],
       description:
-        "Comprehensive UX design program covering user research, wireframing, prototyping, and design systems.",
+        "Bachelor's degree in Computer Science and Engineering with a focus on software development, algorithms, and database systems.",
       certificateUrl: "#",
-      previewImage: "/placeholder.svg?height=200&width=300",
+      previewImage: "/certificates/computer_science.jpg",
       color: "from-blue-400 to-blue-600",
-      platformIcon: "/images/istad.jpg",
+      platformIcon: "/images/rupp.jpg",
     },
     {
-      platform: "FreeCodeCamp",
-      title: "Front End Development Libraries",
-      instructor: "FreeCodeCamp",
+      platform: "Instinct Institute",
+      title: "Flutter Development",
+      instructor: "Instinct Team",
       completedDate: "December 2023",
-      duration: "300 hours",
-      skills: ["React", "Redux", "Bootstrap", "Sass", "jQuery"],
-      description: "Comprehensive front-end development course covering modern JavaScript libraries and frameworks.",
+      duration: "90 hours",
+      skills: ["Flutter", "Dart", "Firebase", "API Integration"],
+      description: "Comprehensive Flutter development course covering mobile app development and best practices.",
       certificateUrl: "#",
-      previewImage: "/placeholder.svg?height=200&width=300",
+      previewImage: "/certificates/flutter.jpg",
       color: "from-green-500 to-green-700",
-      platformIcon: "/images/istad.jpg",
+      platformIcon: "/images/instinct.jpg",
     },
     {
-      platform: "LinkedIn",
-      title: "React.js Essential Training",
+      platform: "ETEC",
+      title: "Java Programming",
       instructor: "Eve Porcello",
       completedDate: "November 2023",
       duration: "4 hours",
       skills: ["React", "JSX", "Components", "State Management", "Hooks"],
       description: "Essential React.js training covering components, state management, and modern React patterns.",
       certificateUrl: "#",
-      previewImage: "/placeholder.svg?height=200&width=300",
+      previewImage: "/certificates/java_programming.jpg",
       color: "from-blue-600 to-blue-800",
-      platformIcon: "/images/istad.jpg",
+      platformIcon: "/images/etec.png",
     },
     {
-      platform: "Educative",
-      title: "Understanding Redux: A Beginner's Guide To State Management",
-      instructor: "Educative Team",
+      platform: "ETEC",
+      title: "Basic Computer and Installation",
+      instructor: "CSTAD Team",
       completedDate: "October 2023",
-      duration: "8 hours",
-      skills: ["Redux", "State Management", "React-Redux", "Middleware", "DevTools"],
+      duration: "40 hours",
+      skills: ["Java", "HTML", "CSS", "JavaScript", "jQuery", "Bootstrap", "PostgreSQL", "Git"],
       description:
-        "Comprehensive Redux course covering state management patterns and best practices for React applications.",
+        "Foundational web development course covering HTML, CSS, JavaScript, and PostgreSQL with a focus on modern web practices.",
       certificateUrl: "#",
-      previewImage: "/placeholder.svg?height=200&width=300",
+      previewImage: "/certificates/basic_computer.jpg",
       color: "from-orange-400 to-orange-600",
-      platformIcon: "/images/istad.jpg",
+      platformIcon: "/images/etec.png",
     },
   ]
 
   return (
     <section
       id="certificates"
-      className="py-16 bg-gray-50 dark:bg-slate-900 relative overflow-hidden transition-colors duration-500"
+      className="py-16 bg-background dark:bg-background relative overflow-hidden transition-colors duration-500"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
@@ -180,7 +180,7 @@ export function CertificatesSection() {
 
         {/* Enhanced Certificate Preview Dialog */}
         <Dialog open={!!selectedCertificate} onOpenChange={() => setSelectedCertificate(null)}>
-          <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden bg-white dark:bg-slate-900 p-0 border-0 shadow-2xl rounded-3xl transition-colors duration-500">
+          <DialogContent className="max-w-7xl max-h-[95vh] overflow-hidden bg-white dark:bg-slate-900 p-0 border-0 shadow-2xl rounded-3xl transition-colors duration-500">
             <DialogTitle className="sr-only">
               {selectedCertificate?.title} Certificate Preview
             </DialogTitle>
@@ -196,141 +196,49 @@ export function CertificatesSection() {
                   <X className="w-6 h-6" />
                 </Button> */}
 
-                {/* Certificate Preview Image with Enhanced Design */}
-                <div className="relative h-[52rem] rounded-t-3xl overflow-hidden flex-shrink-0">
+                {/* Certificate Preview Image - Full Size */}
+                <div className="relative overflow-hidden flex-shrink-0 rounded-t-3xl">
                   <Image
-                    src={selectedCertificate.previewImage || "/placeholder.svg?height=600&width=1200"}
+                    src={selectedCertificate.previewImage || "/placeholder.svg"}
                     alt={`${selectedCertificate.title} Certificate`}
-                    width={1200}
-                    height={600}
-                    className="w-full h-full object-cover"
+                    width={1400}
+                    height={900}
+                    className="w-full h-auto object-contain max-h-[90vh]"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  
+                  {/* Overlay for badges */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
 
                   {/* Platform Badge */}
                   <div className="absolute top-6 left-6">
                     <div className="flex items-center gap-3">
-                      {/* <div
-                        className={`bg-gradient-to-r ${selectedCertificate.color} text-white px-6 py-2 rounded-2xl flex items-center gap-4 shadow-xl backdrop-blur-sm border border-white/20`}
-                      >
-                        <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-2xl font-bold border-2 border-white/30 overflow-hidden">
-                          <Image
-                            src={selectedCertificate.platformIcon}
-                            alt="Profile"
-                            width={48}
-                            height={48}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <span className="font-bold text-xl">{selectedCertificate.platform}</span>
-                      </div> */}
-                      <div className="bg-yellow-500 text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg">
+                      <div className="bg-yellow-500 text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg backdrop-blur-sm">
                         <Star className="w-4 h-4" />
                         <span className="font-medium text-sm">Certified</span>
                       </div>
                     </div>
                   </div>
 
-                  {/* Achievement Badge */}
-                  {/* <div className="absolute bottom-6 right-6">
-                    <div className="bg-green-500 text-white px-3 py-2 rounded-2xl flex items-center gap-3 shadow-xl backdrop-blur-sm">
-                      <Award className="w-6 h-6" />
-                      <span className="font-semibold">Achievement Unlocked</span>
+                  {/* Certificate Info Badge */}
+                  {/* <div className="absolute bottom-6 left-6">
+                    <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm text-gray-900 dark:text-white px-6 py-3 rounded-2xl shadow-xl border border-gray-200 dark:border-slate-600">
+                      <h3 className="font-bold text-lg">{selectedCertificate.title}</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">{selectedCertificate.platform} • {selectedCertificate.completedDate}</p>
                     </div>
                   </div> */}
                 </div>
 
-                {/* Scrollable Content */}
-                <div className="flex-1 overflow-y-auto bg-white dark:bg-slate-900 transition-colors duration-500">
-                  <div className="p-4 space-y-6">
-                    {/* Title Section */}
-                    <div className="text-center space-y-3">
-                      {/* <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white transition-colors duration-500">
-                        {selectedCertificate.title}
-                      </h2> */}
-                      <div className="flex items-center justify-center gap-2 text-green-500">
-                        <Award className="w-5 h-5" />
-                        <span className="font-medium">Professional Certificate</span>
-                      </div>
+                {/* Minimal Content Footer */}
+                <div className="bg-white dark:bg-slate-900 transition-colors duration-500 p-4">
+                  <div className="text-center">
+                    <div className="flex items-center justify-center gap-2 text-green-500 mb-4">
+                      <Award className="w-5 h-5" />
+                      <span className="font-medium">Professional Certificate</span>
                     </div>
-
-                    {/* Certificate Details Grid */}
-                    {/* <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                      <div className="flex items-center gap-3 p-4 bg-blue-50 dark:bg-blue-900/30 rounded-xl border border-blue-200 dark:border-blue-700/50 transition-colors duration-500">
-                        <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                          <User className="w-5 h-5 text-white" />
-                        </div>
-                        <div className="min-w-0">
-                          <p className="text-xs text-gray-600 dark:text-gray-400 font-medium transition-colors duration-500">
-                            Instructor
-                          </p>
-                          <p className="font-semibold text-gray-900 dark:text-white text-sm truncate transition-colors duration-500">
-                            {selectedCertificate.instructor}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center gap-3 p-4 bg-green-50 dark:bg-green-900/30 rounded-xl border border-green-200 dark:border-green-700/50 transition-colors duration-500">
-                        <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                          <Calendar className="w-5 h-5 text-white" />
-                        </div>
-                        <div className="min-w-0">
-                          <p className="text-xs text-gray-600 dark:text-gray-400 font-medium transition-colors duration-500">
-                            Completed
-                          </p>
-                          <p className="font-semibold text-gray-900 dark:text-white text-sm truncate transition-colors duration-500">
-                            {selectedCertificate.completedDate}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center gap-3 p-4 bg-purple-50 dark:bg-purple-900/30 rounded-xl border border-purple-200 dark:border-purple-700/50 sm:col-span-2 lg:col-span-1 transition-colors duration-500">
-                        <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
-                          <Award className="w-5 h-5 text-white" />
-                        </div>
-                        <div className="min-w-0">
-                          <p className="text-xs text-gray-600 dark:text-gray-400 font-medium transition-colors duration-500">
-                            Duration
-                          </p>
-                          <p className="font-semibold text-gray-900 dark:text-white text-sm truncate transition-colors duration-500">
-                            {selectedCertificate.duration}
-                          </p>
-                        </div>
-                      </div>
-                    </div> */}
-
-                    {/* Skills and Description */}
-                    {/* <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-gray-900 dark:text-white flex items-center gap-2 transition-colors duration-500">
-                          <Sparkles className="w-4 h-4 text-green-500" />
-                          Skills Acquired
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {selectedCertificate.skills.map((skill: string) => (
-                            <span
-                              key={skill}
-                              className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-xs font-medium hover:scale-105 transition-all duration-200 border border-green-300 dark:border-green-600"
-                            >
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-gray-900 dark:text-white transition-colors duration-500">
-                          Description
-                        </h4>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm transition-colors duration-500">
-                          {selectedCertificate.description}
-                        </p>
-                      </div>
-                    </div> */}
-
+                    
                     {/* Action Buttons */}
-                    {/* <div className="flex flex-col sm:flex-row gap-3 justify-center pt-6 border-t border-gray-200 dark:border-gray-700 transition-colors duration-500">
+                    {/* <div className="flex flex-col sm:flex-row gap-3 justify-center">
                       <Button
                         variant="outline"
                         className="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 bg-transparent"
@@ -338,15 +246,22 @@ export function CertificatesSection() {
                       >
                         <a href={selectedCertificate.certificateUrl} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="w-4 h-4 mr-2" />
-                          View Certificate
+                          View Original
                         </a>
                       </Button>
                       <Button
                         variant="outline"
                         className="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 bg-transparent"
+                        onClick={() => {
+                          // Create a link to download the image
+                          const link = document.createElement('a');
+                          link.href = selectedCertificate.previewImage;
+                          link.download = `${selectedCertificate.title.replace(/\s+/g, '_')}_Certificate.jpg`;
+                          link.click();
+                        }}
                       >
                         <Download className="w-4 h-4 mr-2" />
-                        Download PDF
+                        Download Image
                       </Button>
                     </div> */}
                   </div>

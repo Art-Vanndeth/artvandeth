@@ -128,29 +128,29 @@ export function ExperienceSection() {
   ]
 
   return (
-    <section id="experience" className="py-16 bg-background">
+    <section id="experience" className="py-16 ipad:py-12 lg:py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Experience Section */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-3 mb-6">
-              <Briefcase className="w-8 h-8 text-green-500 animate-bounce" />
-              <h2 className="text-4xl md:text-5xl font-bold text-green-500">Experience</h2>
-              <Code2 className="w-8 h-8 text-green-500 animate-pulse" />
+        <div className="mb-16 ipad:mb-12 lg:mb-16">
+          <div className="text-center mb-12 ipad:mb-8 lg:mb-12">
+            <div className="inline-flex items-center gap-3 mb-6 ipad:mb-4 lg:mb-6">
+              <Briefcase className="w-8 h-8 ipad:w-7 ipad:h-7 lg:w-8 lg:h-8 text-green-500 animate-bounce" />
+              <h2 className="text-4xl ipad:text-3xl lg:text-5xl font-bold text-green-500">Experience</h2>
+              <Code2 className="w-8 h-8 ipad:w-7 ipad:h-7 lg:w-8 lg:h-8 text-green-500 animate-pulse" />
             </div>
           </div>
 
-          <div className="space-y-6 max-w-6xl mx-auto">
+          <div className="space-y-6 ipad:space-y-8 max-w-6xl mx-auto">
             {experience.map((item, index) => (
               <Card
                 key={index}
                 className="modern-card hover:shadow-xl transition-all duration-300 group overflow-hidden"
               >
-                <CardContent className="p-8">
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                <CardContent className="p-8 ipad:p-6 lg:p-8">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6 ipad:mb-4 lg:mb-6">
                     <div className="flex items-center gap-4 mb-4 lg:mb-0">
-                      <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-xl overflow-hidden">
+                      <div className="w-12 h-12 ipad:w-10 ipad:h-10 lg:w-12 lg:h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-xl overflow-hidden">
                         <Image
                           src={item.logo}
                           alt="Profile"
@@ -160,7 +160,7 @@ export function ExperienceSection() {
                         />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-foreground">{item.company}</h3>
+                        <h3 className="text-xl ipad:text-lg lg:text-xl font-bold text-foreground">{item.company}</h3>
                         <div className="flex items-center gap-2 text-muted-foreground">
                           <MapPin className="w-4 h-4" />
                           <span className="text-sm">{item.location}</span>
@@ -168,24 +168,24 @@ export function ExperienceSection() {
                       </div>
                     </div>
 
-                    <Badge className="bg-green-500 text-white px-4 py-2 text-sm font-medium w-fit">
-                      <Calendar className="w-4 h-4 mr-2" />
+                    <Badge className="bg-green-500 text-white px-4 py-2 ipad:px-3 ipad:py-1.5 lg:px-4 lg:py-2 text-sm ipad:text-xs lg:text-sm font-medium w-fit">
+                      <Calendar className="w-4 h-4 ipad:w-3 ipad:h-3 lg:w-4 lg:h-4 mr-2 ipad:mr-1 lg:mr-2" />
                       {item.period}
                     </Badge>
                   </div>
 
-                  <div className="mb-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <Briefcase className="w-5 h-5 text-green-500" />
-                      <h4 className="text-lg font-semibold text-foreground">{item.position}</h4>
+                  <div className="mb-6 ipad:mb-4 lg:mb-6">
+                    <div className="flex items-center gap-2 mb-4 ipad:mb-3 lg:mb-4">
+                      <Briefcase className="w-5 h-5 ipad:w-4 ipad:h-4 lg:w-5 lg:h-5 text-green-500" />
+                      <h4 className="text-lg ipad:text-base lg:text-lg font-semibold text-foreground">{item.position}</h4>
                     </div>
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="space-y-3 ipad:space-y-2 lg:space-y-3">
                     {item.achievements.map((achievement, achievementIndex) => (
-                      <div key={achievementIndex} className="flex items-start gap-3">
+                      <div key={achievementIndex} className="flex items-start gap-3 ipad:gap-2 lg:gap-3">
                         <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0" />
-                        <p className="text-muted-foreground leading-relaxed">{achievement}</p>
+                        <p className="text-muted-foreground leading-relaxed text-sm ipad:text-sm lg:text-base">{achievement}</p>
                       </div>
                     ))}
                   </div>
@@ -196,34 +196,34 @@ export function ExperienceSection() {
         </div>
         
         {/* Education Section */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-3 mb-6">
-              <GraduationCap className="w-8 h-8 text-green-500 animate-bounce" />
-              <h2 className="text-4xl md:text-5xl font-bold text-green-500">Education</h2>
-              <Award className="w-8 h-8 text-green-500 animate-pulse" />
+        <div className="mb-16 ipad:mb-12 lg:mb-16">
+          <div className="text-center mb-12 ipad:mb-8 lg:mb-12">
+            <div className="inline-flex items-center gap-3 mb-6 ipad:mb-4 lg:mb-6">
+              <GraduationCap className="w-8 h-8 ipad:w-7 ipad:h-7 lg:w-8 lg:h-8 text-green-500 animate-bounce" />
+              <h2 className="text-4xl ipad:text-3xl lg:text-5xl font-bold text-green-500">Education</h2>
+              <Award className="w-8 h-8 ipad:w-7 ipad:h-7 lg:w-8 lg:h-8 text-green-500 animate-pulse" />
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-1 ipad:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 ipad:gap-8 max-w-6xl mx-auto">
             {education.map((item, index) => (
               <Card
                 key={index}
                 className="modern-card hover:shadow-xl transition-all duration-300 group overflow-hidden"
               >
-                <CardContent className="p-8">
-                  <div className="flex items-center justify-between mb-6">
-                    <Badge className="bg-green-500 text-white px-4 py-2 text-sm font-medium">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      {item.period}
+                <CardContent className="p-6 sm:p-8 ipad:p-6 lg:p-8">
+                  <div className="flex xs:flex-row ipad:flex-col lg:flex-row xs:items-center ipad:items-start lg:items-center xs:justify-between ipad:justify-start lg:justify-between gap-3 xs:gap-2 sm:gap-0 ipad:gap-3 lg:gap-0 mb-6">
+                    <Badge className="bg-green-500 text-white px-3 sm:px-4 ipad:px-3 lg:px-4 py-1.5 sm:py-2 text-xs sm:text-sm ipad:text-xs lg:text-sm font-medium w-fit">
+                      <Calendar className="w-3 h-3 sm:w-4 sm:h-4 ipad:w-3 ipad:h-3 lg:w-4 lg:h-4 mr-1 sm:mr-2 ipad:mr-1 lg:mr-2" />
+                      <span className="truncate">{item.period}</span>
                     </Badge>
-                    <Badge variant="outline" className="border-green-500 text-green-500 px-4 py-2 text-sm font-medium">
-                      <Award className="w-4 h-4 mr-2" />
-                      {item.type}
+                    <Badge variant="outline" className="border-green-500 text-green-500 px-3 sm:px-4 ipad:px-3 lg:px-4 py-1.5 sm:py-2 text-xs sm:text-sm ipad:text-xs lg:text-sm font-medium w-fit">
+                      <Award className="w-3 h-3 sm:w-4 sm:h-4 ipad:w-3 ipad:h-3 lg:w-4 lg:h-4 mr-1 sm:mr-2 ipad:mr-1 lg:mr-2" />
+                      <span className="truncate">{item.type}</span>
                     </Badge>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="space-y-4 ipad:space-y-3 lg:space-y-4">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full overflow-hidden">
                         <Image
@@ -236,18 +236,18 @@ export function ExperienceSection() {
                       </div>
                       <div>
                         <p className="text-sm text-muted-foreground font-medium">{item.degree}</p>
-                        <h3 className="text-xl font-bold text-foreground">{item.field}</h3>
+                        <h3 className="text-xl ipad:text-lg lg:text-xl font-bold text-foreground">{item.field}</h3>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-2 text-green-500">
-                      <GraduationCap className="w-5 h-5" />
-                      <span className="font-medium">{item.institution}</span>
+                      <GraduationCap className="w-5 h-5 ipad:w-4 ipad:h-4 lg:w-5 lg:h-5" />
+                      <span className="font-medium text-sm ipad:text-sm lg:text-base">{item.institution}</span>
                     </div>
 
                     <div className="flex items-center gap-2 text-muted-foreground">
-                      <MapPin className="w-5 h-5" />
-                      <span>{item.location}</span>
+                      <MapPin className="w-5 h-5 ipad:w-4 ipad:h-4 lg:w-5 lg:h-5" />
+                      <span className="text-sm ipad:text-sm lg:text-base">{item.location}</span>
                     </div>
                   </div>
                 </CardContent>
@@ -260,24 +260,24 @@ export function ExperienceSection() {
 
         {/* Project Trainings Section */}
         <div>
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-3 mb-6">
-              <FolderOpen className="w-8 h-8 text-green-500 animate-bounce" />
-              <h2 className="text-4xl md:text-5xl font-bold text-green-500">Project</h2>
-              <Award className="w-8 h-8 text-green-500 animate-pulse" />
+          <div className="text-center mb-12 ipad:mb-8 lg:mb-12">
+            <div className="inline-flex items-center gap-3 mb-6 ipad:mb-4 lg:mb-6">
+              <FolderOpen className="w-8 h-8 ipad:w-7 ipad:h-7 lg:w-8 lg:h-8 text-green-500 animate-bounce" />
+              <h2 className="text-4xl ipad:text-3xl lg:text-5xl font-bold text-green-500">Project</h2>
+              <Award className="w-8 h-8 ipad:w-7 ipad:h-7 lg:w-8 lg:h-8 text-green-500 animate-pulse" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-green-500 mb-6">Trainings</h2>
+            <h2 className="text-4xl ipad:text-3xl lg:text-5xl font-bold text-green-500 mb-6 ipad:mb-4 lg:mb-6">Trainings</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-1 ipad:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 ipad:gap-8 max-w-6xl mx-auto">
             {projectTrainings.map((project, index) => (
               <Card
                 key={index}
                 className="modern-card hover:shadow-xl transition-all duration-300 group overflow-hidden"
               >
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center overflow-hidden">
+                <CardContent className="p-8 ipad:p-6 lg:p-8">
+                  <div className="flex items-center gap-3 mb-4 ipad:mb-3 lg:mb-4">
+                    <div className="w-10 h-10 ipad:w-8 ipad:h-8 lg:w-10 lg:h-10 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center overflow-hidden">
                       <Image
                         src={project.icon}
                         alt={project.name}
@@ -286,19 +286,19 @@ export function ExperienceSection() {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <h3 className="text-xl font-bold text-foreground">{project.name}</h3>
+                    <h3 className="text-xl ipad:text-lg lg:text-xl font-bold text-foreground">{project.name}</h3>
                   </div>
 
-                  <p className="text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
+                  <p className="text-muted-foreground mb-4 ipad:mb-3 lg:mb-4 leading-relaxed text-sm ipad:text-sm lg:text-base">{project.description}</p>
 
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Calendar className="w-4 h-4" />
-                      <span>{project.period}</span>
+                      <Calendar className="w-4 h-4 ipad:w-3 ipad:h-3 lg:w-4 lg:h-4" />
+                      <span className="text-sm ipad:text-xs lg:text-sm">{project.period}</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <MapPin className="w-4 h-4" />
-                      <span>{project.location}</span>
+                      <MapPin className="w-4 h-4 ipad:w-3 ipad:h-3 lg:w-4 lg:h-4" />
+                      <span className="text-sm ipad:text-xs lg:text-sm">{project.location}</span>
                     </div>
                   </div>
                 </CardContent>
